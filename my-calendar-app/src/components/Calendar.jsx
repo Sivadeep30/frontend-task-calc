@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { ChevronLeft, ChevronRight, Star, StarOff, Calendar as CalendarIcon, Clock, Users } from 'lucide-react';
 import eventsData from '../data/events.json';
+import MiniCalendar from './MiniCalendar';
+import YearSelector from './YearSelector';
 import './Calendar.css';
 
 const Calendar = () => {
@@ -9,6 +11,8 @@ const Calendar = () => {
   const [events, setEvents] = useState([]);
   const [importantDates, setImportantDates] = useState(new Set());
   const [selectedDate, setSelectedDate] = useState(null);
+  const [showMiniCalendar, setShowMiniCalendar] = useState(false);
+  const [showYearSelector, setShowYearSelector] = useState(false);
 
   useEffect(() => {
     setEvents(eventsData);
@@ -66,14 +70,32 @@ const Calendar = () => {
     return conflicts;
   };
 
+  const handleMiniCalendarSelect = (date) => {
+    setCurrentDate(date);
+    setShowMiniCalendar(false);
+  };
+
+  const handleYearSelect = (date) => {
+    setCurrentDate(date);
+    setShowYearSelector(false);
+  };
+
   const renderHeader = () => (
     <div className="calendar-header">
       <div className="header-left">
-        <div className="calendar-icon">
+        <div 
+          className="calendar-icon clickable"
+          onClick={() => setShowMiniCalendar(true)}
+          title="Quick navigate to date"
+        >
           <CalendarIcon size={24} />
         </div>
         <div className="header-info">
-          <h1 className="header-title">
+          <h1 
+            className="header-title clickable"
+            onClick={() => setShowYearSelector(true)}
+            title="Select year"
+          >
             {currentDate.format('MMMM YYYY')}
           </h1>
           <p className="header-subtitle">
@@ -178,7 +200,6 @@ const Calendar = () => {
                 </div>
               ))}
               
-              {/* Show detailed event info for selected date */}
               {isSelected && dayEvents.length > 0 && (
                 <div className="event-details-inline">
                   {dayEvents.map((event) => (
@@ -254,6 +275,22 @@ const Calendar = () => {
           </div>
         </div>
       </div>
+
+      {showMiniCalendar && (
+        <MiniCalendar
+          currentDate={currentDate}
+          onDateSelect={handleMiniCalendarSelect}
+          onClose={() => setShowMiniCalendar(false)}
+        />
+      )}
+
+      {showYearSelector && (
+        <YearSelector
+          currentDate={currentDate}
+          onYearSelect={handleYearSelect}
+          onClose={() => setShowYearSelector(false)}
+        />
+      )}
     </div>
   );
 };

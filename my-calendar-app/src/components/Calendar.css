@@ -1,3 +1,277 @@
+/* Clickable elements */
+.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.05);
+}
+
+.header-title.clickable:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mini Calendar Styles */
+.mini-calendar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.3s ease-out;
+}
+
+.mini-calendar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 24px;
+  min-width: 320px;
+  animation: scale-in 0.3s ease-out;
+}
+
+.mini-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mini-calendar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.mini-nav-button {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-nav-button:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: scale(1.1);
+}
+
+.mini-calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.mini-day-header {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  padding: 8px 4px;
+}
+
+.mini-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.mini-calendar-day {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-calendar-day.current-month {
+  color: #1e293b;
+}
+
+.mini-calendar-day.other-month {
+  color: #cbd5e1;
+}
+
+.mini-calendar-day.today {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.mini-calendar-day.selected {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.mini-calendar-day:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  transform: scale(1.1);
+}
+
+/* Year Selector Styles */
+.year-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.3s ease-out;
+}
+
+.year-selector {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 24px;
+  min-width: 320px;
+  animation: scale-in 0.3s ease-out;
+}
+
+.year-selector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.year-selector-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.year-nav-button {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.year-nav-button:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: scale(1.1);
+}
+
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.year-button {
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(248, 250, 252, 0.8);
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.year-button:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.year-button.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments for popups */
+@media (max-width: 640px) {
+  .mini-calendar,
+  .year-selector {
+    margin: 20px;
+    min-width: auto;
+    width: calc(100% - 40px);
+    max-width: 320px;
+  }
+  
+  .mini-calendar-day {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  
+  .year-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* All existing CSS code remains the same ... */
 .calendar-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -296,7 +570,7 @@
 .calendar-cell.selected {
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
   border: 2px solid #667eea;
-  box-shadow: 0 8p 25px rgba(102, 126, 234, 0.2), 0 0 0 4px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2), 0 0 0 4px rgba(102, 126, 234, 0.1);
   z-index: 15;
   min-height: 200px;
   overflow: visible;
