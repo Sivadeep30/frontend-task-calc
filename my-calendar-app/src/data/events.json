@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Team Meeting",
+    "date": "2025-01-15",
+    "time": "09:00",
+    "duration": 60,
+    "priority": "high",
+    "description": "Weekly team sync meeting"
+  },
+  {
+    "id": 2,
+    "title": "Project Deadline",
+    "date": "2025-01-20",
+    "time": "17:00",
+    "duration": 0,
+    "priority": "high",
+    "description": "Final project submission"
+  },
+  {
+    "id": 3,
+    "title": "Lunch with Client",
+    "date": "2025-01-15",
+    "time": "12:30",
+    "duration": 90,
+    "priority": "medium",
+    "description": "Business lunch discussion"
+  },
+  {
+    "id": 4,
+    "title": "Code Review",
+    "date": "2025-01-22",
+    "time": "14:00",
+    "duration": 45,
+    "priority": "medium",
+    "description": "Review pull requests"
+  },
+  {
+    "id": 5,
+    "title": "Gym Session",
+    "date": "2025-01-18",
+    "time": "18:00",
+    "duration": 60,
+    "priority": "low",
+    "description": "Personal fitness time"
+  },
+  {
+    "id": 6,
+    "title": "Doctor Appointment",
+    "date": "2025-01-25",
+    "time": "10:00",
+    "duration": 30,
+    "priority": "high",
+    "description": "Annual checkup"
+  },
+  {
+    "id": 7,
+    "title": "Coffee Break",
+    "date": "2025-01-22",
+    "time": "15:30",
+    "duration": 15,
+    "priority": "low",
+    "description": "Quick coffee with colleague"
+  },
+  {
+    "id": 8,
+    "title": "Presentation Prep",
+    "date": "2025-01-28",
+    "time": "16:00",
+    "duration": 120,
+    "priority": "medium",
+    "description": "Prepare for client presentation"
+  }
+]
